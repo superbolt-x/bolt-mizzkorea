@@ -1,5 +1,5 @@
 {{ config (
-    alias = target.database + '_blended'
+    alias = target.database + '_blended_performance'
 )}}
 
 {% set date_granularity_list = ['day', 'week', 'month', 'quarter', 'year'] %}
