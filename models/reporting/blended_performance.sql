@@ -11,7 +11,7 @@ with initial_sho_data as
 paid_data as 
     (select channel, date_granularity, date, 
         coalesce(sum(spend),0) as spend, coalesce(sum(impressions),0) as impressions, coalesce(sum(clicks),0) as clicks, coalesce(sum(add_to_cart),0) as add_to_cart,
-        coalesce(sum(purchases),0) as paid_purchases, coalesce(sum(revenue),0) as paid_revenue
+        coalesce(sum(purchases),0) as paid_purchases, coalesce(sum(revenue),0) as paid_revenue,
         0 as sho_orders, 0 as upt, 0 as sho_revenue
     from 
         (select 'Meta' as channel, date, date_granularity, 
