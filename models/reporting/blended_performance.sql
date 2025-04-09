@@ -19,7 +19,7 @@ paid_data as
         from {{ source('reporting', 'facebook_ad_performance') }} 
         union all
         select 'Google Ads' as channel, date, date_granularity, 
-            spend, impressions, clicks, add_to_cart, purchases, revenue
+            spend, impressions, clicks, 0 as add_to_cart, purchases, revenue
         from {{ source('reporting', 'googleads_campaign_performance') }})
     group by 1,2,3),
 
