@@ -6,7 +6,7 @@
   
 with initial_sho_data as 
   (SELECT *, {{ get_date_parts('date') }}
-  FROM {{ source('reporting', 'shopify_sales') }}),
+  FROM {{ source('reporting', 'shopify_daily_sales_by_order_line_item') }}),
   
 paid_data as 
     (select channel, date_granularity, date, 
