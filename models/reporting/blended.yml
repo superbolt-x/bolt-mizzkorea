@@ -1,1 +1,14 @@
 version: 2
+
+sources:
+  - name: reporting
+    schema: reporting
+    tables:
+      - name: shopify_daily_sales_by_order_line_item
+        identifier: mizzkorea_shopify_daily_sales_by_order_line_item
+
+      - name: facebook_ad_performance
+        identifier: mizzkorea_facebook_ad_performance
+
+      - name: googleads_campaign_performance
+        identifier: mizzkorea_googleads_campaign_performance
