@@ -56,4 +56,6 @@ select
 from 
     (select * from paid_data
     union all
-    select * from sho_data)
+    select * from sho_data
+    union all
+    select * from sessions_data)
