@@ -12,3 +12,9 @@ sources:
 
       - name: googleads_campaign_performance
         identifier: mizzkorea_googleads_campaign_performance
+
+  - name: gsheet_raw
+    schema: gsheet_raw
+    tables:
+      - name: shopify_sessions
+        identifier: shopify_sessions
