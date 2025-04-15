@@ -34,6 +34,7 @@ sho_data as
          0 as sho_sessions, COUNT(DISTINCT order_id) as sho_orders, COALESCE(SUM(CASE WHEN product_title ~* '5 Step Kit' THEN quantity*5 ELSE quantity END),0) as sho_quantity_ordered,
         COALESCE(SUM(total_sales),0) as sho_revenue
     from initial_sho_data
+    where cancelled_at IS NULL and gift_card = 'false' and order_tags !~* 'gift' and total_sales > 0
     group by 1,2,3
       {% if not loop.last %}UNION ALL
       {% endif %}
