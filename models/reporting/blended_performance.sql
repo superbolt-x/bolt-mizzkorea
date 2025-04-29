@@ -40,7 +40,8 @@ sho_data as
         WHERE cancelled_at IS NULL
         AND total_revenue > 0
         AND order_tags !~* ('gift|content|influencer|employee')
-        AND discount_code !~* ('gift|test') )
+        --AND discount_code !~* ('gift|test') 
+        )
     group by 1,2,3
       {% if not loop.last %}UNION ALL
       {% endif %}
