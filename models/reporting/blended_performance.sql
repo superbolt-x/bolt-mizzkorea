@@ -39,8 +39,8 @@ sho_data as
         (SELECT DISTINCT order_id FROM {{ source('shopify_base', 'shopify_orders') }} 
         WHERE cancelled_at IS NULL
         AND total_revenue > 0
-        AND order_tags !~* ('gift|content|influencer|employee')
-        --AND discount_code !~* ('gift|test') 
+        AND (order_tags !~* ('gift|content|influencer|employee') OR order_tags is null)
+        AND (discount_code NOT IN ('GIFT','TEST') OR discount_code is null)
         )
     group by 1,2,3
       {% if not loop.last %}UNION ALL
